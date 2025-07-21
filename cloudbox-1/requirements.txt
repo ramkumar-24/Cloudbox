@@ -1,5 +1,0 @@
-Flask
-Werkzeug
-boto3
-python-dotenv
-itsdangerous
