@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Files</title>
+</head>
+<body>
+    <div class="container">
+    <h2>Your Uploaded Files</h2>
+    <link rel="stylesheet" href="/static/css/style.css">
+
+
+    {% if files %}
+        <ul>
+            {% for file in files %}
+                <li>
+                    <strong>{{ file }}</strong> 
+                    {% if file.endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp')) %}
+                   <img src="{{ url_for('preview_file', filename=file) }}" width="150" alt="{{ file }}"><br>
+            {% endif %}
+                    <a href="{{ url_for('download_file', filename=file) }}">Download</a> |
+                    <a href="{{ url_for('delete_file', filename=file) }}">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No files found.</p>
+    {% endif %}
+
+    <br>
+    <a href="/dashboard">Back to Dashboard</a>
+    </div>
+</body>
+</html>

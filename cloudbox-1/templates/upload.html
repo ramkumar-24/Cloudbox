@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload File | CloudBox</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="upload-container">
+        <h2>Upload a File</h2>
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+            <input type="file" name="file" required><br><br>
+            <button type="submit" class="btn">Upload</button>
+        </form>
+        <br>
+        <a href="/dashboard" class="link">Back to Dashboard</a>
+    </div>
+</body>
+</html>
